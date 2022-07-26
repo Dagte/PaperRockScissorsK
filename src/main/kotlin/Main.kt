@@ -11,10 +11,25 @@ fun main(args: Array<String>) {
         }
     }
 
+    val results: MutableList<Int> = mutableListOf()
     val shapes: List<Shape> = DefaultArgumentParser().parse(args)
-    shapes.forEach { shape -> printMessage(shape.playPaperRockScissors()) }
+    shapes.forEach { shape ->
+        var result = shape.playPaperRockScissors()
+        printMessage(result)
+        results.add(result)
+    }
+    calculateAndPrintroundResult(results)
 
+}
 
+private fun calculateAndPrintroundResult(results: MutableList<Int>): Int {
+    val reduced = results.reduce { x, y -> x + y }
+    if (reduced > 0) {
+        println("Congratulations, you won this round by $reduced points")
+    } else {
+        println("Sorry, you lost this round by ${Math.abs(reduced)} points")
+    }
+    return reduced
 }
 
 fun printMessage(result: Int) {
