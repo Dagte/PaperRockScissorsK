@@ -1,5 +1,5 @@
 import com.kotlin.rockpaperscissors.DefaultArgumentParser
-import com.kotlin.rockpaperscissors.Shape
+import io.github.dagte.simulator.Shape
 
 fun main(args: Array<String>) {
     if (args == null) {

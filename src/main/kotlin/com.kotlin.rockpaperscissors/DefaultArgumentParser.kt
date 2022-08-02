@@ -1,5 +1,6 @@
 package com.kotlin.rockpaperscissors
 
+import io.github.dagte.simulator.Shape
 import java.util.*
 
 class DefaultArgumentParser : ArgumentParser {

@@ -1,14 +1,31 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+group = "org.example"
+version = "1.0-SNAPSHOT"
 
 plugins {
     kotlin("jvm") version "1.7.0"
     application
 }
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+dependencies {
+    implementation("io.github.dagte:RPS-Common:1.0.1")
+    implementation("io.github.dagte:RPS-Simulator:1.0.2")
+}
+//        implementation 'io.github.dagte:RPS-Common:1.0.0'
+//        implementation 'io.github.dagte:RPS-Simulator:1.0.0'
+
+
+
+
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
